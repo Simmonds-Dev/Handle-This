@@ -1,0 +1,25 @@
+<nav>
+    <div>
+        <a href="/">Home</a>
+        <button>
+            <span></span>
+        </button>
+        <div>
+            <ul>
+                {{#if logged_in}} {{! If the user is logged in, show the Log Out button. }}
+
+                <li class="nav-item">
+                    <a id="logoutBtn">Log Out</a>
+                </li>
+                {{else}} {{! If the user is not logged in, show the Log In button. }}
+                <li class="nav-item">
+                    <a href="/login">Log In</a>
+                </li>
+                {{/if}} {{! End of if/else statement. }}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script src="/js/logout.js" defer></script>
+```

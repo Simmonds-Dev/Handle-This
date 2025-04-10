@@ -1,0 +1,33 @@
+{{#if logged_in}}
+<section>
+    <a href="/post">Add a new post</a>
+</section>
+
+{{/if}}
+
+{{#each posts as |post|}}
+
+<div>
+    <div>
+        <div>
+            <h5>{{post.user.username}}</h5>
+        </div>
+        <div>
+
+            <b>Posted on:
+                {{format_date post.date_created}}</b>
+        </div>
+    </div>
+    <div>
+        <h5>{{post.post_title}}</h5>
+    </div>
+    <div>
+        
+        <div>
+            <p>{{post.post_content}}</p>
+        </div>
+
+    </div>
+</div>
+
+{{/each}}
