@@ -7,27 +7,22 @@
 
 {{#each posts as |post|}}
 
-<div>
-    <div>
-        <div>
-            <h5>{{post.user.username}}</h5>
-        </div>
-        <div>
+<article class="post-card">
+    <header class="card-header">
+        <span class="username">{{post.user.username}}</span>
+        <h2 class="title">{{post.post_title}}</h2>
+    </header>
 
-            <b>Posted on:
-                {{format_date post.date_created}}</b>
-        </div>
-    </div>
-    <div>
-        <h5>{{post.post_title}}</h5>
-    </div>
-    <div>
-        
-        <div>
-            <p>{{post.post_content}}</p>
-        </div>
+    <section class="card-content">
+        <p>{{post.post_content}}</p>
+    </section>
 
-    </div>
-</div>
+    <footer class="card-footer">
+        <time datetime="{{post.date_created}}">
+            Posted on: {{format_date post.date_created}}
+        </time>
+    </footer>
+</article>
+
 
 {{/each}}
