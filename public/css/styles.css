@@ -96,7 +96,7 @@ h5 {
 
 /* Form container */
 form {
-    background-color: white;
+    background-color: #2c2c2c;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(209, 209, 209, 0.1);
@@ -108,13 +108,13 @@ form {
 form h2 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #fff;
 }
 
 /* Label styling */
 label {
     font-size: 0.9rem;
-    color: #555;
+    color: #fff;
     display: block;
     margin-bottom: 0.5rem;
 }
@@ -156,8 +156,10 @@ button:hover {
 
 /* Links at the bottom */
 p {
+    display: flex;
+    justify-content: center;
     font-size: 0.9rem;
-    color: #555;
+    color: #fff;
 }
 
 a {
