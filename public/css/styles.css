@@ -28,10 +28,10 @@ h5 {
     justify-content: space-around;
     align-items: center;
     min-width: 80%;
-}
-
-.homeBtn {
-    display: flex;
+    background: linear-gradient(to top, #0e180d, #08fd00);
+    min-width: 950px;
+    border-radius: 16px;
+    margin-bottom: 20px;
 }
 
 .navbar {
@@ -39,8 +39,28 @@ h5 {
     list-style: none;
 }
 
+.homeBtn {
+    color: white;
+}
+
+#logoutBtn {
+    color: white;
+}
+
+#logoutBtn:hover {
+    cursor: pointer;
+}
+
+#loginBtn {
+    color: white;
+}
+
+.addPostBtn {
+    display: flex;
+    justify-content: center;
+}
+
 .post-card {
-    min-width: 900px;
     max-width: 900px;
     margin: 2rem auto;
     padding: 1.5rem;
@@ -94,6 +114,12 @@ h5 {
     color: #bbb;
 }
 
+.newPost {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
 /* Form container */
 form {
     background-color: #2c2c2c;
@@ -125,6 +151,8 @@ input[type="email"], input[type="password"], input[type="text"] {
     padding: 0.8rem;
     margin-bottom: 1.5rem;
     border: 1px solid #ccc;
+    background-color: #1f1f1f;
+    color: white;
     border-radius: 4px;
     font-size: 1rem;
     box-sizing: border-box;
@@ -134,6 +162,38 @@ input[type="email"], input[type="password"], input[type="text"] {
 input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
     border-color: #4CAF50;
     outline: none;
+}
+
+/* Match form inside post-card layout */
+#postForm {
+    background-color: transparent;
+    padding: 0;
+    width: 100%;
+}
+
+/* Title and textarea styling */
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-bottom: 1.5rem;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+/* On focus */
+textarea:focus {
+    border-color: #08fd00;
+    outline: none;
+}
+
+/* Form group spacing */
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
 /* Button styling */

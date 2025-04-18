@@ -1,23 +1,14 @@
-<div>
-    <div>
-        <p id='username'>Logged in as {{username}}</p>
-    </div>
-
-    <article>
-        <form id="postForm">
-
-            <div>
-                <label>Give your post a title:</label>
-                <input type="text" id="post_title">
-                <label for="post_content">
-                    Write your post here:
-                </label>
-
-                <textarea id="post_content"></textarea>
-            </div>
-            <button>Post It!</button>
-        </form>
-    </article>
-</div>
+<article id="postForm">
+    <form>
+        <div>
+            <h2 class="newPost">Create a New Post</h2>
+            <label for="post_title">Give your post a title:</label>
+            <input type="text" id="post_title" name="post_title" required>
+            <label for="post_content">Write your post here:</label>
+            <textarea id="post_content" name="post_content" rows="6" required></textarea>
+        </div>
+        <button type="submit">Post It!</button>
+    </form>
+</article>
 
 <script src="/js/post.js"></script>
