@@ -1,0 +1,71 @@
+<article class="post-card">
+    <header class="card-header">
+        <span class="username">{{post.user.username}}</span>
+        <h2 class="title">{{post.post_title}}</h2>
+        {{#if (eq currentUserId post.user.id)}}
+        <section class="buttonContainer">
+            <button id="edit-post-btn">Edit Post</button>
+            <button id="delete-post-btn">Delete Post</button>
+        </section>
+        {{/if}}
+    </header>
+
+    <section class="card-content">
+        <p>{{post.post_content}}</p>
+    </section>
+
+
+    <footer class="card-footer">
+        <time datetime="{{post.date_created}}">
+            Posted on: {{format_date post.date_created}}
+        </time>
+    </footer>
+
+</article>
+
+
+<h3>Comments</h3>
+{{#each post.comments}}
+<div class="comment" data-comment-id="{{this.id}} data-user-id={{this.user.id}}">
+    <p class="comment-text"><strong>{{this.user.username}}</strong>: {{this.content}}</p>
+    {{#if (eq ../currentUserId this.user.id)}}
+    <section class="buttonContainer">
+        <button class="edit-comment-btn" data-comment-id="{{this.id}}">Edit</button>
+        <button class="delete-comment-btn" data-comment-id="{{this.id}}">Delete</button>
+    </section>
+    {{/if}}
+</div>
+{{/each}}
+
+{{#if logged_in}}
+<div id="post-meta" data-post-id="{{post.id}}" data-user-id="{{currentUserId}}"></div>
+<form id="comment-form">
+<label>Add a Comment:</label>
+    <textarea id="comment-content" rows="3" required></textarea><br>
+    <button type="submit">Post Comment</button>
+</form>
+
+<div id="editPostModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-button" id="closeModal">&times;</span>
+        <h2>Edit Post</h2>
+        <textarea id="editPostTextarea" rows="6"></textarea><br>
+        <button id="savePostEditBtn">Save Changes</button>
+    </div>
+</div>
+
+<div id="editCommentModal" class="modal hidden">
+    <div class="modal-content">
+        <span id="closeCommentModal" class="close-button">&times;</span>
+        <h3>Edit Comment</h3>
+        <textarea id="editCommentTextarea"></textarea>
+        <button id="saveCommentEditBtn">Save Changes</button>
+    </div>
+</div>
+
+
+{{else}}
+<p><a href="/login">Log in</a> &nbsp; to comment.</p>
+{{/if}}
+
+<script src="/js/singlePost.js"></script>

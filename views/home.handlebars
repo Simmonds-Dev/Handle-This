@@ -7,22 +7,32 @@
 
 {{#each posts as |post|}}
 
+<div id="post-meta" data-post-id="{{post.id}}" data-user-id="{{currentUserId}}"></div>
+
 <article class="post-card">
     <header class="card-header">
         <span class="username">{{post.user.username}}</span>
         <h2 class="title">{{post.post_title}}</h2>
+
+        <section>
+            <button id="viewPostBtn" data-post-id="{{post.id}}">View Post</button>
+        </section>
+
     </header>
 
     <section class="card-content">
         <p>{{post.post_content}}</p>
     </section>
 
+
     <footer class="card-footer">
         <time datetime="{{post.date_created}}">
             Posted on: {{format_date post.date_created}}
         </time>
     </footer>
+
 </article>
 
-
 {{/each}}
+
+<script src="/js/singlePost.js"></script>

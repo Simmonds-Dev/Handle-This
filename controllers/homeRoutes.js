@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -20,6 +20,39 @@ router.get('/post', withAuth, (req, res) => {
     res.render('post', {
         logged_in: req.session.logged_in,
     });
+});
+
+// GET /post/:id — show single post w/comments
+router.get('/post/:id', async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['id', 'username']
+                },
+                {
+                    model: Comment,
+                    include: [{ model: User, attributes: ['id', 'username'] }]
+                }
+            ]
+        });
+
+        if (!postData) {
+            return res.status(404).render('404'); // or res.send('Not Found');
+        }
+
+        const post = postData.get({ plain: true });
+
+        res.render('singlePost', {
+            post,
+            logged_in: req.session.logged_in,
+            currentUserId: req.session.user_id
+        });
+    } catch (err) {
+        console.error("🔥 Error in /post/:id route:", err);
+        res.status(500).send("Server error");
+    }
 });
 
 router.get('/signup', (req, res) => {

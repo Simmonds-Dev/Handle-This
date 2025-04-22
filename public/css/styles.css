@@ -62,6 +62,7 @@ h5 {
 
 .post-card {
     max-width: 900px;
+    min-width: 900px;
     margin: 2rem auto;
     padding: 1.5rem;
     border-radius: 16px;
@@ -146,7 +147,9 @@ label {
 }
 
 /* Input fields */
-input[type="email"], input[type="password"], input[type="text"] {
+input[type="email"],
+input[type="password"],
+input[type="text"] {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1.5rem;
@@ -159,7 +162,9 @@ input[type="email"], input[type="password"], input[type="text"] {
 }
 
 /* Focus styling for inputs */
-input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
     border-color: #4CAF50;
     outline: none;
 }
@@ -169,6 +174,16 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
     background-color: transparent;
     padding: 0;
     width: 100%;
+}
+
+.comment {
+    font-size:xx-large;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    width: auto;
 }
 
 /* Title and textarea styling */
@@ -200,6 +215,7 @@ textarea:focus {
 button {
     width: 100%;
     padding: 0.8rem;
+    margin-bottom: 2px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -229,6 +245,64 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding: none;
+    width: 40%;
+}
+
+#edit-post-btn {
+    display: flex;
+    margin: 2px;
+}
+
+#delete-post-btn {
+    display: flex;
+    margin: 2px;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 /* Media query for responsiveness */

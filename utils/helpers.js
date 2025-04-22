@@ -1,8 +1,5 @@
 module.exports = {
-    format_date: (date) => {
-        // Format date as MM/DD/YYYY
-        return date.toLocaleDateString();
-    },
+    eq: (a, b) => a === b,
 
     format_date: (date) => {
         // Using JavaScript Date methods, we get and format the month, date, and year
