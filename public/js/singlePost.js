@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const content = document.getElementById("comment-content").value.trim();
 
             if (content) {
-                const response = await fetch("/api/comments", {
+                const response = await fetch("/api/comment", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ content, post_id: postId })
