@@ -200,6 +200,7 @@ input[type="text"]:focus {
     align-content: center;
     background-color: #fff9f927;
     border-radius: 10px;
+    margin: 5px;
     padding: 5px;
     width: auto;
 }
@@ -366,7 +367,6 @@ main {
 
     .comment {
         font-size: large;
-        padding: 1rem;
         margin: 0.5rem 0;
     }
 
