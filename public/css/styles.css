@@ -184,9 +184,12 @@ input[type="text"]:focus {
     flex-direction: column;
 }
 
+/* Entire Card for comment section */
 .commentSection {
     border-radius: 10px;
     background: linear-gradient(to bottom, #bfffc8, #384d39);
+    max-width: 60%;
+    padding: 1rem;
 }
 
 .comment-text {
@@ -198,7 +201,6 @@ input[type="text"]:focus {
     background-color: #fff9f927;
     border-radius: 10px;
     padding: 5px;
-    height: 50px;
     width: auto;
 }
 
@@ -325,6 +327,7 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -333,14 +336,13 @@ main {
     }
 
     .post-card {
-        min-width: 450px;
-        max-width: 550px;
+        min-width: 600px;
         margin: 1rem auto;
         padding: 1rem;
     }
 
     .card-header {
-        align-items: flex-start;
+        flex-direction: column;
         gap: 0.5rem;
     }
 
@@ -382,7 +384,6 @@ main {
 @media (max-width: 600px) {
     .navContainer {
         font-size: 0.95rem;
-        padding: 0.5rem;
     }
 
     .username {
@@ -391,12 +392,19 @@ main {
 
     .post-card,
     form {
-        width: 300px;
+        min-width: 80%;
     }
 
-    .comment-form {
-        max-width: 300px;
+    .card-header {
+        flex-direction: column;
+
     }
+
+    .commentSection {
+        max-width: 80%;
+    }
+
+    
 
     .card-footer {
         font-size: 0.75rem;

@@ -29,7 +29,8 @@
     {{#each post.comments}}
     <div class="comment" data-comment-id="{{this.id}}" data-user-id="{{this.user.id}}">
         <div class="commentContent">
-            <p class="comment-text"><strong>{{this.user.username}}</strong>: {{this.content}}</p>
+            <p class="comment-text"><strong>{{this.user.username}}</strong>: 
+            <p></p>{{this.content}}</p>
             <time datetime="{{this.date_created}}">
                 Posted on: {{format_date this.date_created}}
             </time>
